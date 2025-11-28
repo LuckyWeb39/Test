@@ -1,0 +1,45 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.body-lock {
+  overflow: hidden;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: $color-page;
+  padding: 50px;
+}
+
+.page__content {
+  z-index: 1;
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 85px;
+}
+
+.page__main {
+  display: flex;
+  max-width: 1230px;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.hero__eyebrow {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-muted;
+}
+
+.hero__title {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  color: $color-muted;
+}

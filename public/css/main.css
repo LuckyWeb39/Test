@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #fff;
+  color: #1f2540;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+mark {
+  background: rgba(115, 86, 255, 0.2);
+  color: #FF3F3A;
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+.body-lock {
+  overflow: hidden;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+  padding: 50px;
+}
+
+.page__content {
+  z-index: 1;
+  max-width: 1230px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 85px;
+}
+
+.page__main {
+  display: flex;
+  max-width: 1230px;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.hero__eyebrow {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #1E212C;
+}
+
+.hero__title {
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  color: #1E212C;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.header__logo {
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #1E212C;
+}
+
+.header__actions {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.filters__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #9A9CA5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.filters__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  color: #9A9CA5;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  transition: background-color 220ms cubic-bezier(0.1, 0, 0.1, 1), border-color 220ms cubic-bezier(0.1, 0, 0.1, 1), color 220ms cubic-bezier(0.1, 0, 0.1, 1), box-shadow 220ms cubic-bezier(0.1, 0, 0.1, 1);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  text-align: center;
+}
+.filters__button--active {
+  color: #FF3F3A;
+  border-color: #FF3F3A;
+}
+.filters__button--active .filters__badge {
+  color: #FF3F3A;
+}
+.filters__button:hover {
+  color: #FF3F3A;
+  border-color: #FF3F3A;
+}
+.filters__button:hover .filters__badge {
+  color: #FF3F3A;
+}
+
+.filters__label {
+  white-space: nowrap;
+}
+
+.filters__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #9A9CA5;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.search {
+  flex: 0 0 auto;
+  position: relative;
+  min-width: min(260px, 100%);
+  max-width: 350px;
+}
+
+.search__input {
+  width: 100%;
+  height: 44px;
+  padding: 14px 48px 14px 16px;
+  border: 1px solid #787A80;
+  border-radius: 4px;
+  color: #1f2540;
+}
+.search__input::placeholder {
+  color: #1E212C;
+}
+.search__input:focus {
+  outline: none;
+  border: 1px solid #FF3F3A;
+  border-radius: 4px;
+}
+
+.search__icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  color: #787A80;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+.catalog {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 30px;
+}
+
+.catalog__loading {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: #424551;
+}
+
+.catalog__empty {
+  padding: 48px;
+  border-radius: 4px;
+  text-align: center;
+  color: #1E212C;
+  background: #ffffff;
+}
+
+@media (max-width: 869px) {
+  .catalog__grid {
+    margin: 0 auto;
+  }
+}
+.card {
+  min-height: 438px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(27, 32, 56, 0.12);
+  transition: transform 220ms cubic-bezier(0.1, 0, 0.1, 1), box-shadow 220ms cubic-bezier(0.1, 0, 0.1, 1), border-color 220ms cubic-bezier(0.1, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 80px rgba(27, 32, 56, 0.18);
+}
+
+.card__photo {
+  max-height: 240px;
+  object-fit: cover;
+}
+
+.card__category {
+  align-self: flex-start;
+  padding: 1px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.card__category--marketing {
+  background: #03CEA4;
+}
+.card__category--management {
+  background: #5A87FC;
+}
+.card__category--hr {
+  background: #F89828;
+}
+.card__category--development {
+  background: #7772F1;
+}
+.card__category--design {
+  background: #F52F6E;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1E212C;
+}
+
+.card_info_wrapper {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__description {
+  color: #1E212C;
+  line-height: 1.5;
+}
+
+.card__meta-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__price {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #FF3F3A;
+  border-right: 1px solid #787A80;
+  padding-right: 8px;
+}
+
+.card__mentor {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #787A80;
+}
+
+@media (max-width: 720px) {
+  .card {
+    min-width: 370px;
+  }
+}
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

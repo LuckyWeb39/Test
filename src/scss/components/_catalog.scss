@@ -1,0 +1,39 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 30px;
+}
+
+.catalog__loading{
+ margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: #424551;
+}
+
+.catalog__empty {
+  padding: 48px;
+  border-radius: $radius-lg;
+  text-align: center;
+  color: $color-muted;
+  background: $color-surface;
+}
+
+@media (max-width: 869px) {
+  .catalog__grid {
+    margin: 0 auto;
+  }
+}

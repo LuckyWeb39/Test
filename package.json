@@ -1,0 +1,15 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "description": "Pixel-perfect catalog challenge for Vercel",
+  "scripts": {
+    "dev": "sass --watch src/scss:public/css --style=expanded --embed-sources",
+    "build": "sass src/scss:public/css --no-source-map --style=compressed"
+  },
+  "keywords": ["vanilla", "scss", "catalog"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.79.3"
+  }
+}

@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+@mixin fluid-type($min, $max, $vw-min: 320, $vw-max: 1920) {
+  font-size: clamp(#{$min}px, calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$vw-min}px) / #{($vw-max - $vw-min)})), #{$max}px);
+}
+
+@mixin glass-panel {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  box-shadow: $shadow-card;
+}

@@ -1,0 +1,15 @@
+@use 'utils/variables';
+@use 'utils/mixins';
+@use 'base/reset';
+@use 'layout/page';
+@use 'components/header';
+@use 'components/filters';
+@use 'components/catalog';
+@use 'components/card';
+
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

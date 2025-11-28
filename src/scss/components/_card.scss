@@ -1,0 +1,99 @@
+@use '../utils/variables' as *;
+
+.card {
+  min-height: 438px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-lg;
+  background: $color-surface;
+  box-shadow: $shadow-card;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 80px rgba(27, 32, 56, 0.18);
+}
+
+.card__photo {
+  max-height: 240px;
+  object-fit: cover;
+}
+
+.card__category {
+  align-self: flex-start;
+  padding: 1px 8px;
+  border-radius: $radius-lg;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+
+  &--marketing {
+    background: #03CEA4;
+  }
+
+  &--management {
+    background: #5A87FC;
+  }
+
+  &--hr {
+    background: #F89828;
+  }
+
+  &--development {
+    background: #7772F1;
+  }
+
+  &--design {
+    background: #F52F6E;
+  }
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1E212C;
+}
+
+.card_info_wrapper{
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card__description {
+  color: $color-muted;
+  line-height: 1.5;
+}
+
+.card__meta-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__price {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: $color-accent;
+  border-right: 1px solid #787A80;
+  padding-right: 8px;
+}
+
+.card__mentor {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #787A80;
+}
+
+@media (max-width: 720px) {
+  .card {
+    min-width: 370px;
+  }
+}
